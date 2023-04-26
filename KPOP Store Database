@@ -1,0 +1,34 @@
+-- Create a KPOP store database, more specifically with different group's lightsticks
+
+CREATE TABLE kpop_lightsticks (id INTEGER PRIMARY KEY, name TEXT, inventory INTEGER, aisle INTEGER, price INTEGER);
+
+INSERT INTO kpop_lightsticks 
+
+VALUES 
+(1, "BTS", 25, 2, 55),
+(2, "Seventeen", 25, 1, 50),
+(3, "GIDLE", 20, 3, 45),
+(4, "FiftyFifty", 12, 4, 35),
+(5, "NCT", 16, 5, 40),
+(6, "Red Velvet", 22, 4, 50),
+(7, "LESSERAFIM", 15, 2, 45),
+(8, "NewJeans", 10, 3, 50),
+(9, "Got7", 21, 5, 50),
+(10, "EXO", 15, 4, 50),
+(11, "Blackpink", 16, 3, 60),
+(12, "BIBI", 13, 5, 35),
+(13, "Pentagon", 10, 1, 40),
+(14, "Shinee", 15, 5, 40),
+(15, "TXT", 23, 4, 45);
+
+-- display database ordered by price
+SELECT * FROM kpop_lightsticks ORDER BY price;
+
+-- display total number of lightsticks in each aisle
+SELECT aisle, SUM(inventory) from kpop_lightsticks GROUP BY aisle;
+
+-- display database ordered by aisle number
+SELECT * FROM kpop_lightsticks ORDER BY aisle;
+
+--what is the avg price of items in aisle 4? 
+SELECT AVG(price) "avg price of lightsticks in aisle 4" FROM kpop_lightsticks WHERE aisle='4';
