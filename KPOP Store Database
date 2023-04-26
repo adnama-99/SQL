@@ -3,7 +3,6 @@
 CREATE TABLE kpop_lightsticks (id INTEGER PRIMARY KEY, name TEXT, inventory INTEGER, aisle INTEGER, price INTEGER);
 
 INSERT INTO kpop_lightsticks 
-
 VALUES 
 (1, "BTS", 25, 2, 55),
 (2, "Seventeen", 25, 1, 50),
