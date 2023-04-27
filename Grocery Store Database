@@ -27,8 +27,8 @@ SELECT AVG(price) "avg bulk item price"
 FROM store
 where section='bulk'; 
 
---what are the most 5 popular items? 
+--what are the most 3 popular items? 
 SELECT item, price, popularity
 FROM store
 order by popularity desc
-limit 5; 
+limit 3; 
