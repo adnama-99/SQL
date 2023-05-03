@@ -1,0 +1,41 @@
+# Project - Kpop Idols #
+
+CREATE TABLE idols (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    fullname TEXT,
+    age INTEGER,
+    nationality TEXT);
+    
+INSERT INTO idols (fullname, age, nationality) VALUES ("Choi Seungcheol", 27, "Korean");
+INSERT INTO idols (fullname, age, nationality) VALUES ("Huh Yunjin", 21, "American");
+INSERT INTO idols (fullname, age, nationality) VALUES ("Jeon Jungkook", 25, "Korean");
+INSERT INTO idols (fullname, age, nationality) VALUES ("Chou Tzuyu", 23, "Taiwanese");
+INSERT INTO idols (fullname, age, nationality) VALUES ("Lay Zhang", 31, "Chinese");
+INSERT INTO idols (fullname, age, nationality) VALUES ("Jeon Soyeon", 24, "Korean");
+INSERT INTO idols (fullname, age, nationality) VALUES ("Hong Jisoo", 27, "American");
+INSERT INTO idols (fullname, age, nationality) VALUES ("Miyawaki Sakura", 25, "Japanese");
+INSERT INTO idols (fullname, age, nationality) VALUES ("Chae Hyungwon", 29, "Korean");
+INSERT INTO idols (fullname, age, nationality) VALUES ("Kim Yongsun", 32, "Korean");
+
+CREATE TABLE idol_info (
+id INTEGER PRIMARY KEY AUTOINCREMENT,
+    idol_id INTEGER,
+    group_name TEXT,
+    debut INTEGER);
+INSERT INTO idol_info (idol_id, group_name, debut) VALUES (1, "Seventeen", 2015);
+INSERT INTO idol_info (idol_id, group_name, debut) VALUES (2, "LESSERAFIM", 2022);
+INSERT INTO idol_info (idol_id, group_name, debut) VALUES (3, "BTS", 2013);
+INSERT INTO idol_info (idol_id, group_name, debut) VALUES (4, "Twice", 2015);
+INSERT INTO idol_info (idol_id, group_name, debut) VALUES (5, "EXO", 2012);
+INSERT INTO idol_info (idol_id, group_name, debut) VALUES (6, "GIDLE", 2018);
+INSERT INTO idol_info (idol_id, group_name, debut) VALUES (7, "Seventeen", 2015);
+INSERT INTO idol_info (idol_id, group_name, debut) VALUES (8, "LESSERAFIM", 2022);
+INSERT INTO idol_info (idol_id, group_name, debut) VALUES (9, "MonstaX", 2015);
+INSERT INTO idol_info (idol_id, group_name, debut) VALUES (10, "Mamamoo", 2014);
+
+/* kpop idols and their groups and their debut year */ 
+
+SELECT idols.fullname, idol_info.group_name, idol_info.debut FROM idols
+    JOIN idol_info
+    ON idols.id=idol_info.idol_id
+    ORDER BY debut asc;
